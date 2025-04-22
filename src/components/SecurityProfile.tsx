@@ -1,4 +1,3 @@
-
 const securityPersonnel = {
   name: 'Rahul Sharma',
   id: 'SEC-1029',

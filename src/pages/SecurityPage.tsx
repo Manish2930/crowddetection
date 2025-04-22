@@ -9,18 +9,30 @@ const SecurityPage = () => {
   const userRole = 'security' as const;
 
   return (
-    <div className="p-6 space-y-8">
-      {/* Profile Card */}
-      <SecurityProfile />
+    <div className="p-6 md:p-10 space-y-10 bg-gray-50 min-h-screen">
+      {/* Security Profile Section */}
+      <section className="bg-white rounded-2xl shadow-md p-6">
+        <h2 className="text-xl font-semibold mb-4 text-gray-800">Security Profile</h2>
+        <SecurityProfile />
+      </section>
 
-      {/* Grid layout for alerts and sending alert */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <AlertInbox />
-        <SendAlert />
-      </div>
+      {/* Alerts and Send Alert Section */}
+      <section className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-white rounded-2xl shadow-md p-6">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">Incoming Alerts</h2>
+          <AlertInbox />
+        </div>
+        <div className="bg-white rounded-2xl shadow-md p-6">
+          <h2 className="text-xl font-semibold mb-4 text-gray-800">Send New Alert</h2>
+          <SendAlert />
+        </div>
+      </section>
 
-      {/* Real-time Chat */}
-      <ChatPanel userId={securityUserId} userRole={userRole} />
+      {/* Real-time Communication Panel */}
+      <section className="bg-white rounded-2xl shadow-md p-6">
+        <h2 className="text-xl font-semibold mb-4 text-gray-800">Real-time Chat with Other Security Units</h2>
+        <ChatPanel userId={securityUserId} userRole={userRole} />
+      </section>
     </div>
   );
 };
